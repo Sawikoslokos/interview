@@ -13,8 +13,6 @@ def shortURL(request):
     url = urlShortModel.objects.create(
         long_url=data['url']
     )
-    print(url.uuid)
-    print(str(url.uuid))
     shorturl = "http://localhost:8000/shorten/" + str(url.uuid)
     return Response({'longurl': url.long_url, 'shorturl': shorturl})
 
